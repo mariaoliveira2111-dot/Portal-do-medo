@@ -1,0 +1,180 @@
+:root {
+  --bg-color: #121212;
+  --sidebar-bg: #1e1e1e;
+  --card-bg: #282828;
+  --text-main: #ffffff;
+  --text-muted: #b3b3b3;
+  --accent-color: #e50914;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Barra Lateral */
+.sidebar {
+  width: 70px;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  gap: 30px;
+}
+
+.sidebar .icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  opacity: 0.7;
+}
+
+.sidebar .icon:hover {
+  opacity: 1;
+}
+
+/* Conteúdo Principal */
+.main-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Topbar */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.brand-title {
+  color: var(--accent-color);
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.user-profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Carrossel / Seção de Filmes */
+.content-section {
+  padding: 20px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+}
+
+.carousel-btn {
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: var(--accent-color);
+}
+
+.cards-wrapper {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cartão do Filme */
+.movie-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  width: 240px;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.poster-container {
+  width: 100%;
+  height: 340px;
+  background-color: #333;
+}
+
+.poster-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.movie-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.movie-description {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+}

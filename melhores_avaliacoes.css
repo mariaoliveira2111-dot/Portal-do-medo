@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1a1415; /* Fundo marrom bem escuro como na imagem */
+  color: #a89f91; /* Cor de texto bege/cinza fosco */
+  font-family: 'Fondamento', 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Container Principal do Carrossel */
+.carousel-container {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+/* Título Top Melhores Avaliações */
+.title {
+  font-family: 'Fondamento', cursive, serif;
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: normal;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Estrutura Central com Setas e Grid */
+.carousel-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+/* Setas de Navegação (< e >) */
+.nav-arrow {
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 4rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 10px;
+  user-select: none;
+  transition: transform 0.2s, color 0.2s;
+  /* Efeito de sombra pesada como no print */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.nav-arrow:hover {
+  color: #e50914;
+  transform: scale(1.1);
+}
+
+/* Grid com os 4 Filmes */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+/* Cartão do Filme */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+/* Borda / Moldura da Capa do Filme */
+.poster-frame {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: #000000;
+  border: 2px solid #000000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.poster-frame:hover {
+  transform: scale(1.03);
+}
+
+.poster-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Descrição do Filme */
+.description {
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: #928779;
+  font-weight: 500;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .movies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+}
